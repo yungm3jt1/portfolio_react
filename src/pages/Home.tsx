@@ -17,6 +17,7 @@ export default function Home() {
   const proofRef = useRef<HTMLDivElement>(null);
   const proofsRef = useRef<HTMLDivElement>(null);
   const proofs2Ref = useRef<HTMLDivElement>(null);
+  const proofs3 = useRef<HTMLDivElement>(null);
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -96,6 +97,23 @@ export default function Home() {
       },
       "+=1",
     );
+    tl.from(
+      proofs3.current,
+      {
+        opacity: 0,
+        x: 100,
+        
+      },
+      "+=1",
+    );
+    tl.to(
+      proofs3.current,
+      {
+        opacity: 0,
+        x: -200,
+      },
+      "+=1",
+    );
 
     return () => tl.revert();
   }, []);
@@ -141,9 +159,7 @@ export default function Home() {
           <ProjectBox
             ref={proofs2Ref}
             title="IntervYou"
-            description="TechniCodeCamp Hackathon Winner - 1st Place. IntervYou was built in just 24 hours during TechniCodeCamp Hackathon. Our team of four developers worked non-stop to bring this idea to life:
-
-Despite the time constraints and challenges, we successfully delivered a fully functional prototype that impressed the judges and secured us the 1st place prize."
+            description="TechniCodeCamp Hackathon Winner - 1st Place. IntervYou was built in just 24 hours during TechniCodeCamp Hackathon. "
             images={[
               "/codedu.png",
               "/codedu2.png",
@@ -152,6 +168,14 @@ Despite the time constraints and challenges, we successfully delivered a fully f
             ]}
             github="https://github.com/yungm3jt1/CodeReactJS"
             className="absolute"
+          />
+          <ProjectBox
+            title="memory-leak-crisis"
+            description="Interactive web-based system simulation built with React and Firebase, featuring real-time health monitoring and a Proof-of-Work–based attack mechanic. The project combines frontend state management with backend API integration to create a dynamic, cyber-themed user experience."
+            images={["/memoryleak.png"]}
+            className="absolute"
+            ref={proofs3}
+            github="https://github.com/yungm3jt1/memory-leak-crisis"
           />
         </div>
       </div>

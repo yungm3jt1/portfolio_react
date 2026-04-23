@@ -6,7 +6,7 @@ type ProjectBoxProps = {
   title: string;
   description: string;
   images: string[];
-  github: string;
+  github?: string;
   website?: string;
   className: string;
 };
@@ -59,15 +59,16 @@ const ProjectBox = forwardRef<HTMLDivElement, ProjectBoxProps>(
             </p>
           </div>
           <div className="flex justify-center p-4">
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex gap-2 rounded-full text-white mr-5"
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-2 rounded-full text-white mr-5"
             >
               <FaGithub size={28} className="hover:text-gray-500" />
             </a>
-
+              )}
             {website && (
               <a
                 href={website}
