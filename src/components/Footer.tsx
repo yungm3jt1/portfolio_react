@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => (
   <footer className="w-full bg-black border-t border-white/10 text-slate-300">
-    <div className="mx-auto flex w-full max-w-6xl flex-col md:flex-row items-center justify-between px-6 py-8">
+    <div className="mx-auto flex w-full max-w-6xl flex-col md:flex-row items-center justify-between px-4 md:px-6 py-6 md:py-8">
       <div className="flex flex-col items-center md:items-start gap-2 mb-4 md:mb-0">
         <p className="text-sm font-medium">
           &copy; {new Date().getFullYear()} M3JT1. All rights reserved.
@@ -13,7 +13,7 @@ const Footer = () => (
         </p>
       </div>
 
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4 md:gap-6">
         <a
           href="https://github.com/yungm3jt1"
           target="_blank"

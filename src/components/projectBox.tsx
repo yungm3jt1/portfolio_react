@@ -24,7 +24,10 @@ const ProjectBox = forwardRef<HTMLDivElement, ProjectBoxProps>(
     };
 
     return (
-      <div ref={ref} className={`mt-8 flex justify-around w-full max-w-4xl px-4 ${className}`}>
+      <div
+        ref={ref}
+        className={`mt-8 flex justify-center w-full max-w-4xl px-4 md:px-0 ${className}`}
+      >
         <div className="relative w-full overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-[0_0_50px_rgba(168,85,247,0.05)] hover:shadow-[0_0_50px_rgba(168,85,247,0.2)] hover:border-purple-500/50 hover:bg-white/[0.05] transition-all duration-500 group flex flex-col md:flex-row">
           <div className="relative h-64 md:h-auto w-full md:w-1/2 overflow-hidden bg-black/50">
             {images.length > 0 ? (
@@ -34,7 +37,9 @@ const ProjectBox = forwardRef<HTMLDivElement, ProjectBoxProps>(
                 className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             ) : (
-              <div className="h-full w-full flex items-center justify-center text-slate-500">No image</div>
+              <div className="h-full w-full flex items-center justify-center text-slate-500">
+                No image
+              </div>
             )}
 
             {images.length > 1 && (
@@ -57,7 +62,9 @@ const ProjectBox = forwardRef<HTMLDivElement, ProjectBoxProps>(
           </div>
 
           <div className="p-8 flex flex-col justify-center w-full md:w-1/2">
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent mb-4">{title}</h3>
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent mb-4">
+              {title}
+            </h3>
             <p className="text-lg text-slate-300 leading-relaxed mb-6">
               {description}
             </p>

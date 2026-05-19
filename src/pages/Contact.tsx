@@ -10,9 +10,9 @@ export default function Contact() {
       animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
       exit={{ opacity: 0, y: -40, filter: "blur(10px)", scale: 1.02 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="min-h-[calc(100vh-80px)] bg-black text-white px-6 md:px-12 py-20 pb-32 flex items-center justify-center"
+      className="min-h-[calc(100vh-80px)] bg-black text-white px-4 md:px-12 py-12 md:py-20 pb-28 flex items-center justify-center"
     >
-      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <div className="space-y-8">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-700 bg-clip-text text-transparent mb-4">
@@ -132,7 +132,7 @@ function Form() {
 
   return (
     <form
-      className="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 rounded-3xl space-y-6 shadow-[0_0_50px_rgba(168,85,247,0.05)]"
+      className="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-3xl space-y-6 shadow-[0_0_50px_rgba(168,85,247,0.05)] w-full"
       onSubmit={handleSubmit}
     >
       {error && (
@@ -150,7 +150,7 @@ function Form() {
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
+          className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 md:py-2.5 text-white text-sm md:text-base focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
           placeholder="John Doe"
         />
       </div>
@@ -164,7 +164,7 @@ function Form() {
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
+          className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 md:py-2.5 text-white text-sm md:text-base focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
           placeholder="john@example.com"
         />
       </div>
@@ -178,7 +178,7 @@ function Form() {
           rows={4}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none"
+          className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 md:py-2.5 text-white text-sm md:text-base focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none"
           placeholder="How can I help you?"
         />
       </div>
@@ -186,6 +186,7 @@ function Form() {
       <button
         type="submit"
         className="w-full flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 rounded-lg transition-colors mt-2"
+        aria-label="Send message"
       >
         <span>Send Message</span>
         <Send className="w-4 h-4" />
