@@ -9,7 +9,7 @@ const NAV_ITEMS = [
 ];
 
 const Navbar = () => (
-  <header className="fixed top-0 w-full z-50 bg-black/20 border-b border-white/5 backdrop-blur-xl transition-all duration-300">
+  <header className="fixed top-0 w-full z-50 bg-black/20 border-b border-white/5 backdrop-blur-sm transition-all duration-300">
     <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-4">
       <Link
         to="/"
@@ -19,7 +19,12 @@ const Navbar = () => (
       </Link>
       <nav className="flex items-center gap-1 sm:gap-2 relative">
         {NAV_ITEMS.map(({ to, label }) => (
-          <NavLink key={to} to={to} end={to === "/"} className="relative rounded-full px-4 py-2 text-sm font-medium transition-colors hover:text-white text-slate-400 z-10 outline-none">
+          <NavLink
+            key={to}
+            to={to}
+            end={to === "/"}
+            className="relative rounded-full px-4 py-2 text-sm font-medium transition-colors hover:text-white text-slate-400 z-10 outline-none"
+          >
             {({ isActive }) => (
               <>
                 {isActive && (
@@ -31,7 +36,11 @@ const Navbar = () => (
                     <span className="absolute inset-x-0 top-2 h-3 bg-gradient-to-b from-white/40 to-transparent rounded-full blur-[2px] opacity-70" />
                   </motion.div>
                 )}
-                <span className={`relative z-10 transition-colors duration-300 ${isActive ? "text-white" : ""}`}>{label}</span>
+                <span
+                  className={`relative z-10 transition-colors duration-300 ${isActive ? "text-white" : ""}`}
+                >
+                  {label}
+                </span>
               </>
             )}
           </NavLink>

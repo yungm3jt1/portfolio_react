@@ -14,15 +14,26 @@ const Footer = () => (
       </div>
 
       <div className="flex items-center gap-6">
-        <a href="https://github.com/yungm3jt1" target="_blank" rel="noreferrer" className="hover:text-purple-400 transition-colors">
+        <a
+          href="https://github.com/yungm3jt1"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-purple-400 transition-colors"
+        >
           <FaGithub className="w-5 h-5" />
           <span className="sr-only">GitHub</span>
         </a>
-        <a href="https://www.linkedin.com/in/mateusz-tasiemski-2a1a662a4/" className="hover:text-purple-400 transition-colors">
+        <a
+          href="https://www.linkedin.com/in/mateusz-tasiemski-2a1a662a4/"
+          className="hover:text-purple-400 transition-colors"
+        >
           <FaLinkedin className="w-5 h-5" />
           <span className="sr-only">LinkedIn</span>
         </a>
-        <a href="mailto:contact@mati.dev" className="hover:text-purple-400 transition-colors">
+        <a
+          href="mailto:contact@m3jt1.pl"
+          className="hover:text-purple-400 transition-colors"
+        >
           <Mail className="w-5 h-5" />
           <span className="sr-only">Email</span>
         </a>
